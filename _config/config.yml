@@ -1,0 +1,20 @@
+---
+Name: display_logic_extras
+After: 
+    - "framework/*"
+    - "display_logic/*"
+---
+Injector:
+    DisplayLogicFormField:
+        class: "DisplayLogicExtrasFormField"
+    DisplayLogicCriterion:
+        class: "DisplayLogicExtrasCriterion"
+    DisplayLogicCriteria:
+        class: "DisplayLogicExtrasCriteria"
+
+
+DisplayLogicCriteria:
+    comparisons:
+        - "hasUpload"
+        - "hasUploadedAtLeast"
+        - "hasUploadedLessThan"
