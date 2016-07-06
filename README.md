@@ -1,6 +1,6 @@
 SilverStripe Display Logic Extras
 =================
-ddons to the display-logic module by UncleCheese, for details on included/expanded features see the [docs](docs/).
+Addons to the display-logic module by UncleCheese, for details on included/expanded features see the [docs](docs/).
 
 ## Maintainer Contact
 * Ed Chipman ([UndefinedOffset](https://github.com/UndefinedOffset))
