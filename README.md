@@ -8,6 +8,7 @@ ddons to the display-logic module by UncleCheese, for details on included/expand
 
 ## Requirements
 * SilverStripe Framework 3.2+
+* [Display Logic 1.3+](https://github.com/unclecheese/silverstripe-display-logic)
 
 
 ## Installation
