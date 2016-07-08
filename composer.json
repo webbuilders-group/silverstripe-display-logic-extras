@@ -13,7 +13,7 @@
     ],
     "require": {
         "silverstripe/framework": "^3.2",
-        "unclecheese/display-logic": "~1.3",
+        "unclecheese/display-logic": "*",
         "composer/installers": "*"
     },
     "support": {
