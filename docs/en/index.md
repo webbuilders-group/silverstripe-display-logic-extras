@@ -85,3 +85,6 @@ Due to an inconsistency in how FieldGroup's add fields to the rendered DOM they 
 
 ### FieldGroup Nested Fields Logic
 Again because of the same inconsistency in how FieldGroup's add fields to the rendered DOM they are missing the necessary classes to show and hide fields via display logic. This module includes a change that applies only the display logic styles to the wrapping div for each field in a FieldGroup. This allows the fields to be shown or hidden based on other fields in the form.
+
+### Clearing Display Logic Criteria
+Ever have a subclass that you need to clear the criteria on a field? Well there's a method added to all fields called ``clearDisplayLogicCriteria`` that does just that. It also returns an instance of the field so you can chain off it to call other methods on the field such as start building a new rule set.
