@@ -88,3 +88,6 @@ Again because of the same inconsistency in how FieldGroup's add fields to the re
 
 ### Clearing Display Logic Criteria
 Ever have a subclass that you need to clear the criteria on a field? Well there's a method added to all fields called ``clearDisplayLogicCriteria`` that does just that. It also returns an instance of the field so you can chain off it to call other methods on the field such as start building a new rule set.
+
+### Ending Logic Groups
+If you've ever needed multiple logic groups you'll notice that there's no way to end the group you are currently working in. Well there's a method that will allow you to do this, simply call ``endGroup`` to end the current logic group and return to it's parent logic criteria.

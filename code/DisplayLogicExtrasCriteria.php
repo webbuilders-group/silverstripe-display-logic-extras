@@ -15,5 +15,19 @@ class DisplayLogicExtrasCriteria extends DisplayLogicCriteria {
             }
         }
     }
+    
+    /**
+     * Ends the current group
+     * @return {DisplayLogicExtrasCriteria|FormField} Returns the parent criteria set or the form field
+     */
+    public function endGroup() {
+        if($this->parent) {
+            $this->parent->addCriterion($this);
+            
+            return $this->parent;
+        }
+        
+        return $this->slave;
+    }
 }
 ?>
