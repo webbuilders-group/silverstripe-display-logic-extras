@@ -5,15 +5,15 @@ After:
     - "display_logic/*"
 ---
 Injector:
-    DisplayLogicFormField:
+    UncleCheese\DisplayLogic\Extensions\DisplayLogic:
         class: "DisplayLogicExtrasFormField"
-    DisplayLogicCriterion:
+    UncleCheese\DisplayLogic\Criterion:
         class: "DisplayLogicExtrasCriterion"
-    DisplayLogicCriteria:
+    UncleCheese\DisplayLogic\Criteria:
         class: "DisplayLogicExtrasCriteria"
 
 
-DisplayLogicCriteria:
+UncleCheese\DisplayLogic\Criteria:
     comparisons:
         - "hasUpload"
         - "hasUploadedAtLeast"

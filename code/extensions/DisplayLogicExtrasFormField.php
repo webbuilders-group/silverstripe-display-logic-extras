@@ -1,5 +1,11 @@
 <?php
-class DisplayLogicExtrasFormField extends DisplayLogicFormField {
+
+namespace WebBuildersGroup\DisplayLogicExtras\exetensions;
+
+use UncleCheese\DisplayLogic\Extensions\DisplayLogic;
+use SilverStripe\View\Requirements;
+
+class DisplayLogicExtrasFormField extends DisplayLogic {
     protected $display_logic_classes;
     
     

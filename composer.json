@@ -1,7 +1,7 @@
 {
     "name": "webbuilders-group/silverstripe-display-logic-extras",
     "description": "Addons to the display-logic module by UncleCheese",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "display", "logic", "forms", "cms"],
     "license": "BSD-3-Clause",
     "authors": [
@@ -12,14 +12,16 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^3.2",
-        "unclecheese/display-logic": "*",
-        "composer/installers": "*"
+        "silverstripe/framework": "4.2.1",
+        "unclecheese/display-logic": "2.0.1"
     },
     "support": {
         "issues": "https://github.com/webbuilders-group/silverstripe-display-logic-extras/issues"
     },
     "extra": {
+        "expose": [
+            "javascript"
+        ],
         "installer-name": "display-logic-extras"
     }
 }

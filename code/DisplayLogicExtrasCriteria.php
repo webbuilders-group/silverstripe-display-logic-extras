@@ -1,5 +1,10 @@
 <?php
-class DisplayLogicExtrasCriteria extends DisplayLogicCriteria {
+
+namespace WebBuildersGroup\DisplayLogicExtras;
+
+use UncleCheese\DisplayLogic\Criteria;
+
+class DisplayLogicExtrasCriteria extends Criteria {
     /**
      * Applies a prefix to the display logic master name as well as all of the children criterion, this will act like the prefix is an array
      * @param {string} $prefix Prefix to apply
