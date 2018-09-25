@@ -1,55 +1,47 @@
+import ReactDOM from 'react-dom';
+
 (function($) {
     $.entwine('ss', function($) {
-        $('div.ss-upload.display-logic-master').entwine({
-            onmatch: function() {
-                this._super();
-                
-                var self=this;
-                self.bind('fileuploadfinished', function() {
-                    self.notify();
-                });
-                
-                self.bind('fileuploaddestroyed', function() {
-                    self.notify();
-                });
-                
-                self.fileupload('option', 'destroy', function(e, data) {
-                    var that=$(this).data('fileupload');
-                    if(data.url) {
-                        $.ajax(data);
-                    }
-                    
-                    that._adjustMaxNumberOfFiles(1);
-                    that._transitionCallback(
-                        data.context.removeClass('in'),
-                        function (node) {
-                            node.remove();
-                            
-                            that._trigger('destroyed', e, data);
-                        }
-                    );
-                });
-            },
-            
-            attachFiles: function(ids, uploadedFileId) {
-                this._super(ids, uploadedFileId);
-                
-                this.notify();
+        $('.js-injector-boot div.uploadfield.display-logic-master input.entwine-uploadfield').entwine({
+            refresh() {
+                const props = this.getAttributes();
+                const form = $(this).closest('form');
+                const master = $(this).closest('.display-logic-master');
+                const onChange = () => {
+                    // Trigger change detection (see jquery.changetracker.js)
+                    setTimeout(() => {
+                        form.trigger('change');
+                        
+                        master.notify();
+                    }, 0);
+                };
+
+                const UploadField = this.getComponent();
+
+                // TODO: rework entwine so that react has control of holder
+                ReactDOM.render(
+                    <UploadField
+                        {...props}
+                        onChange={onChange}
+                        noHolder
+                    />,
+                    this.getContainer()
+                );
             }
         });
     });
     
-    $('div.ss-upload.display-logic-master').entwine({
+    $('div.uploadfield.display-logic-master').entwine({
         evaluateHasUpload: function() {
-            return this.find('.template-download:not(.ui-state-error)').length>0;
+            return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>0;
         },
         
-        hasUploadedAtLeast: function(num) {          
-            return this.find('.template-download:not(.ui-state-error)').length>=num;
+        hasUploadedAtLeast: function(num) {
+            return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>=num;
         },
         
         hasUploadedLessThan: function(num) {
-            return this.find('.template-download:not(.ui-state-error)').length<=num;
+            return this.find('.uploadfield-item:not(.uploadfield-item--error)').length<=num;
         }
     });
 })(jQuery);

@@ -1,0 +1,29 @@
+{
+  "name": "webbuilders-group-display-logic-extras",
+  "version": "2.0.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "15.3.1",
+    "react-dom": "15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.3.1",
+    "webpack": "^2.6.1"
+  },
+  "bin": {
+    "webpack": "./node_modules/webpack/bin/webpack.js"
+  },
+  "engines": {
+    "node": "^6.x"
+  },
+  "scripts": {
+    "build": "webpack -p --bail",
+    "watch": "webpack --watch"
+  },
+  "author": "Webbuilders Group",
+  "private": true
+}
