@@ -20,7 +20,7 @@
     },
     "extra": {
         "expose": [
-            "javascript"
+            "client/dist"
         ]
     }
 }

@@ -11,7 +11,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
     /**
      * If the criteria evaluate true, the field should display
      * @param  string $master The name of the master field
-     * @return DisplayLogicCriteria
+     * @return UncleCheese\DisplayLogic\Criteria
      */
     public function displayIf($master) {
         $this->display_logic_classes='display-logic display-logic-hidden display-logic-display';
@@ -23,7 +23,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
      * If the criteria evaluate true, the field should hide.
      * The field will be hidden with CSS on page load, before the script loads.
      * @param  string $master The name of the master field
-     * @return DisplayLogicCriteria
+     * @return UncleCheese\DisplayLogic\Criteria
      */
     public function hideIf($master) {
         $this->display_logic_classes='display-logic display-logic-hide';
@@ -32,20 +32,12 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
     }
     
     /**
-     * Gets the fields display logic criteria
-     * @return {DisplayLogicCriteria}
-     */
-    public function getDisplayLogicCriteria() {
-        return $this->displayLogicCriteria;
-    }
-    
-    /**
      * Clears the display logic criteria
-     * @return {FormField}
+     * @return SilverStripe\Forms\FormField
      */
     public function clearDisplayLogicCriteria() {
-        //Reset the display logic criteria to null
-        $this->displayLogicCriteria=null;
+        //Reset the display logic criteria to an empty array
+        $this->displayLogicCriteria=array();
         
         
         //Remove display logic classes
@@ -61,13 +53,13 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
     
     /**
      * Loads the dependencies and renders the JavaScript-readable logic to the form HTML
-     * @return {string}
+     * @return string
      */
     public function DisplayLogic() {
         $parentResult=parent::DisplayLogic();
         
         if($this->displayLogicCriteria) {
-            Requirements::javascript('webbuilders-group/silverstripe-display-logic-extras: javascript/DisplayLogicExtras.js');
+            Requirements::javascript('webbuilders-group/silverstripe-display-logic-extras: client/dist/DisplayLogicExtras.js');
         }
         
         return $parentResult;
