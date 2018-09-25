@@ -1,6 +1,5 @@
 <?php
-
-namespace WebBuildersGroup\DisplayLogicExtras\exetensions;
+namespace WebbuildersGroup\DisplayLogicExtras\Extensions;
 
 use UncleCheese\DisplayLogic\Extensions\DisplayLogic;
 use SilverStripe\View\Requirements;
@@ -68,7 +67,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
         $parentResult=parent::DisplayLogic();
         
         if($this->displayLogicCriteria) {
-            Requirements::javascript(SS_DLE_BASE.'/javascript/DisplayLogicExtras.js');
+            Requirements::javascript('webbuilders-group/silverstripe-display-logic-extras: javascript/DisplayLogicExtras.js');
         }
         
         return $parentResult;

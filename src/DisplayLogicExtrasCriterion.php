@@ -1,4 +1,5 @@
 <?php
+namespace WebbuildersGroup\DisplayLogicExtras;
 
 use UncleCheese\DisplayLogic\Criterion;
 

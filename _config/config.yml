@@ -4,13 +4,13 @@ After:
     - "framework/*"
     - "display_logic/*"
 ---
-Injector:
+SilverStripe\Core\Injector\Injector:
     UncleCheese\DisplayLogic\Extensions\DisplayLogic:
-        class: "DisplayLogicExtrasFormField"
+        class: WebbuildersGroup\DisplayLogicExtras\Extensions\DisplayLogicExtrasFormField
     UncleCheese\DisplayLogic\Criterion:
-        class: "DisplayLogicExtrasCriterion"
+        class: WebbuildersGroup\DisplayLogicExtras\DisplayLogicExtrasCriterion
     UncleCheese\DisplayLogic\Criteria:
-        class: "DisplayLogicExtrasCriteria"
+        class: WebbuildersGroup\DisplayLogicExtras\DisplayLogicExtrasCriteria
 
 
 UncleCheese\DisplayLogic\Criteria:

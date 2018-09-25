@@ -1,6 +1,5 @@
 <?php
-
-namespace WebBuildersGroup\DisplayLogicExtras;
+namespace WebbuildersGroup\DisplayLogicExtras;
 
 use UncleCheese\DisplayLogic\Criteria;
 
