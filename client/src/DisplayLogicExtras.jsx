@@ -25,7 +25,10 @@ import ReactDOM from 'react-dom';
                         onChange={onChange}
                         noHolder
                     />,
-                    this.getContainer()
+                    this.getContainer(),
+                    function() {
+                        master.notify();
+                    }
                 );
             }
         });
