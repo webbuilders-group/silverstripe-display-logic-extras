@@ -2,7 +2,7 @@
 Name: display_logic_extras
 After: 
     - "framework/*"
-    - "display_logic/*"
+    - "display-logic/*"
 ---
 SilverStripe\Core\Injector\Injector:
     UncleCheese\DisplayLogic\Extensions\DisplayLogic:

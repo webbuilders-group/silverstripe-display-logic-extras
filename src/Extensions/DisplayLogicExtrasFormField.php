@@ -2,6 +2,7 @@
 namespace WebbuildersGroup\DisplayLogicExtras\Extensions;
 
 use UncleCheese\DisplayLogic\Extensions\DisplayLogic;
+use UncleCheese\DisplayLogic\Criteria;
 use SilverStripe\View\Requirements;
 
 class DisplayLogicExtrasFormField extends DisplayLogic {
@@ -64,6 +65,23 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
         }
         
         return $parentResult;
+    }
+    
+    /**
+     * Prefixes all child criteria with the given prefix
+     * @param string $prefix Prefix to append to the criteria
+     */
+    public function prefixDisplayLogicCriteria($prefix) {
+        $newCriteria=array();
+        foreach($this->displayLogicCriteria as $id=>$child) {
+            $newCriteria[$prefix.'['.$id.']']=$child;
+            
+            if($child instanceof Criteria) {
+                $child->prefixCriteria($prefix);
+            }
+        }
+        
+        $this->displayLogicCriteria=$newCriteria;
     }
     
     /**
