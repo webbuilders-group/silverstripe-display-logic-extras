@@ -7,6 +7,7 @@ use SilverStripe\View\Requirements;
 
 class DisplayLogicExtrasFormField extends DisplayLogic {
     protected $display_logic_classes;
+    protected $nestedLogic=array();
     
     
     /**
@@ -68,20 +69,20 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
     }
     
     /**
-     * Prefixes all child criteria with the given prefix
-     * @param string $prefix Prefix to append to the criteria
+     * @param Criteria $criteria
+     * @return Criteria
      */
-    public function prefixDisplayLogicCriteria($prefix) {
-        $newCriteria=array();
-        foreach($this->displayLogicCriteria as $id=>$child) {
-            $newCriteria[$prefix.'['.$id.']']=$child;
-            
-            if($child instanceof Criteria) {
-                $child->prefixCriteria($prefix);
-            }
-        }
-        
-        $this->displayLogicCriteria=$newCriteria;
+    public function setDisplayLogicCriteria(Criteria $criteria) {
+        $this->owner->setField('displayLogic', $criteria);
+        return $criteria;
+    }
+    
+    /**
+     * @param Criteria $criteria
+     * @return Criteria|null
+     */
+    public function getDisplayLogicCriteria() {
+        return $this->owner->getField('displayLogic');
     }
     
     /**

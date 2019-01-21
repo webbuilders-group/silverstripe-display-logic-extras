@@ -21,24 +21,6 @@ class DisplayLogicExtrasCriteria extends Criteria {
     }
     
     /**
-     * Prefixes all child criteria with the given prefix
-     * @param string $prefix Prefix to append to the criteria
-     */
-    public function prefixCriteria($prefix) {
-        $newCriteria=array();
-        
-        foreach($this->criteria as $id=>$child) {
-            $newCriteria[$prefix.'['.$id.']']=$child;
-            
-            if($child instanceof Criteria) {
-                $child->prefixCriteria($prefix);
-            }
-        }
-        
-        $this->criteria=$newCriteria;
-    }
-    
-    /**
      * Ends the current group
      * @return UncleCheese\DisplayLogic\Criteria|SilverStripe\Forms\FormField Returns the parent criteria set or the form field
      */
