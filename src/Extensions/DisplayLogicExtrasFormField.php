@@ -60,7 +60,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic {
     public function DisplayLogic() {
         $parentResult=parent::DisplayLogic();
         
-        if($this->displayLogicCriteria) {
+        if($this->getDisplayLogicCriteria()) {
             Requirements::javascript('unclecheese/display-logic: client/dist/js/bundle.js');
             Requirements::javascript('webbuilders-group/silverstripe-display-logic-extras: client/dist/DisplayLogicExtras.js');
         }

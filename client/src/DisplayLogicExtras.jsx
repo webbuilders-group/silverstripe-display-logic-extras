@@ -32,19 +32,19 @@ import ReactDOM from 'react-dom';
                 );
             }
         });
-    });
-    
-    $('div.uploadfield.display-logic-master').entwine({
-        evaluateHasUpload: function() {
-            return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>0;
-        },
         
-        hasUploadedAtLeast: function(num) {
-            return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>=num;
-        },
-        
-        hasUploadedLessThan: function(num) {
-            return this.find('.uploadfield-item:not(.uploadfield-item--error)').length<=num;
-        }
+        $('div.uploadfield.display-logic-master').entwine({
+            evaluateHasUpload: function() {
+                return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>0;
+            },
+            
+            hasUploadedAtLeast: function(num) {
+                return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>=num;
+            },
+            
+            hasUploadedLessThan: function(num) {
+                return this.find('.uploadfield-item:not(.uploadfield-item--error)').length<=num;
+            }
+        });
     });
 })(jQuery);
