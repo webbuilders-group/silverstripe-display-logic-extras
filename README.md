@@ -16,9 +16,3 @@ __Composer (recommended):__
 ```
 composer require webbuilders-group/silverstripe-display-logic-extras
 ```
-
-
-If you prefer you may also install manually:
-* Download the module from here https://github.com/webbuilders-group/silverstripe-new-relic/archive/master.zip
-* Extract the downloaded archive into your site root so that the destination folder is called new-relic, opening the extracted folder should contain _config.php in the root along with other files/folders
-* Run dev/build?flush=all to regenerate the manifest
