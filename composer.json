@@ -22,5 +22,10 @@
         "expose": [
             "client/dist"
         ]
+    },
+    "autoload": {
+        "psr-4": {
+            "WebbuildersGroup\\FrontEndGridField\\": "src/WebbuildersGroup/FrontEndGridField"
+        }
     }
 }
