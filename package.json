@@ -4,15 +4,16 @@
   "description": "",
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "react": "15.3.1",
-    "react-dom": "15.3.1",
-    "react-redux": "^4.4.5",
-    "redux": "^3.3.1",
-    "webpack": "^2.6.1"
+    "@babel/core": "^7.14.3",
+    "babel-loader": "^8.2.1",
+    "@babel/preset-env": "7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "bin": {
     "webpack": "./node_modules/webpack/bin/webpack.js"

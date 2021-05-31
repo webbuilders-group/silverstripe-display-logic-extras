@@ -38,11 +38,11 @@ import ReactDOM from 'react-dom';
                 return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>0;
             },
             
-            hasUploadedAtLeast: function(num) {
+            evaluateHasUploadedAtLeast: function(num) {
                 return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>=num;
             },
             
-            hasUploadedLessThan: function(num) {
+            evaluateHasUploadedLessThan: function(num) {
                 return this.find('.uploadfield-item:not(.uploadfield-item--error)').length<=num;
             }
         });

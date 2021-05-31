@@ -24,14 +24,14 @@ const config = [
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                                    ['env', { modules: false }],
-                                    'react',
-                                ],
-                        comments: false
-                    }
-                }
-            }
-        ]
+                            ['@babel/env', { modules: false }],
+                            '@babel/react',
+                        ],
+                        comments: false,
+                    },
+                },
+            },
+        ],
     },
     externals: {
             'apollo-client': 'ApolloClient',
