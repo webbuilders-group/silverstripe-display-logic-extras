@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
                     // Trigger change detection (see jquery.changetracker.js)
                     setTimeout(() => {
                         form.trigger('change');
-                        
+
                         master.notify();
                     }, 0);
                 };
@@ -26,24 +26,24 @@ import ReactDOM from 'react-dom';
                         noHolder
                     />,
                     this.getContainer(),
-                    function() {
+                    () => {
                         master.notify();
                     }
                 );
             }
         });
-        
+
         $('div.uploadfield.display-logic-master').entwine({
-            evaluateHasUpload: function() {
-                return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>0;
+            evaluateHasUpload: () => {
+                return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length > 0);
             },
-            
-            evaluateHasUploadedAtLeast: function(num) {
-                return this.find('.uploadfield-item:not(.uploadfield-item--error)').length>=num;
+
+            evaluateHasUploadedAtLeast: (num) => {
+                return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length >= num);
             },
-            
-            evaluateHasUploadedLessThan: function(num) {
-                return this.find('.uploadfield-item:not(.uploadfield-item--error)').length<=num;
+
+            evaluateHasUploadedLessThan: (num) => {
+                return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length <= num);
             }
         });
     });

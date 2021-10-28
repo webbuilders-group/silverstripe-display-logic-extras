@@ -4,6 +4,7 @@ const rootDir = Path.resolve();
 
 const config = [
   {
+    mode: 'development',
     name: 'js',
     entry: {
         'DisplayLogicExtras': rootDir + '/client/src/DisplayLogicExtras.jsx'
