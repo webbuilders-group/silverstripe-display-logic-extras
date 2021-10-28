@@ -27,22 +27,24 @@ import ReactDOM from 'react-dom';
                     />,
                     this.getContainer(),
                     () => {
-                        master.notify();
+                        setTimeout(() => {
+                            master.notify();
+                        }, 0);
                     }
                 );
             }
         });
 
         $('div.uploadfield.display-logic-master').entwine({
-            evaluateHasUpload: () => {
+            evaluateHasUpload() {
                 return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length > 0);
             },
 
-            evaluateHasUploadedAtLeast: (num) => {
+            evaluateHasUploadedAtLeast(num) {
                 return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length >= num);
             },
 
-            evaluateHasUploadedLessThan: (num) => {
+            evaluateHasUploadedLessThan(num) {
                 return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length <= num);
             }
         });
