@@ -1,20 +1,20 @@
 ---
 Name: display_logic_extras
 After: 
-    - "framework/*"
-    - "display-logic/*"
+  - "silverstripe/framework/*"
+  - "unclecheese/display-logic/*"
 ---
 SilverStripe\Core\Injector\Injector:
-    UncleCheese\DisplayLogic\Extensions\DisplayLogic:
-        class: WebbuildersGroup\DisplayLogicExtras\Extensions\DisplayLogicExtrasFormField
-    UncleCheese\DisplayLogic\Criterion:
-        class: WebbuildersGroup\DisplayLogicExtras\DisplayLogicExtrasCriterion
-    UncleCheese\DisplayLogic\Criteria:
-        class: WebbuildersGroup\DisplayLogicExtras\DisplayLogicExtrasCriteria
+  UncleCheese\DisplayLogic\Extensions\DisplayLogic:
+    class: WebbuildersGroup\DisplayLogicExtras\Extensions\DisplayLogicExtrasFormField
+  UncleCheese\DisplayLogic\Criterion:
+    class: WebbuildersGroup\DisplayLogicExtras\DisplayLogicExtrasCriterion
+  UncleCheese\DisplayLogic\Criteria:
+    class: WebbuildersGroup\DisplayLogicExtras\DisplayLogicExtrasCriteria
 
 
 UncleCheese\DisplayLogic\Criteria:
-    comparisons:
-        - "hasUpload"
-        - "hasUploadedAtLeast"
-        - "hasUploadedLessThan"
+  comparisons:
+    - "hasUpload"
+    - "hasUploadedAtLeast"
+    - "hasUploadedLessThan"

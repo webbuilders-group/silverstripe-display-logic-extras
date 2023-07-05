@@ -7,8 +7,8 @@ Addons to the display-logic module by UncleCheese, for details on included/expan
 
 
 ## Requirements
-* SilverStripe Framework 4.1+
-* [Display Logic 2.0+](https://github.com/unclecheese/silverstripe-display-logic)
+* SilverStripe Framework 5.0+
+* [Display Logic 3.0+](https://github.com/unclecheese/silverstripe-display-logic)
 
 
 ## Installation

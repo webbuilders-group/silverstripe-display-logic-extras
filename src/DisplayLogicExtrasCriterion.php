@@ -6,11 +6,11 @@ use UncleCheese\DisplayLogic\Criterion;
 class DisplayLogicExtrasCriterion extends Criterion
 {
     /**
-     * Applies a prefix to the display logic master name, this will act like the prefix is an array
+     * Applies a prefix to the display logic dispatcher name, this will act like the prefix is an array
      * @param string $prefix Prefix to apply
      */
-    public function prefixMaster($prefix)
+    public function prefixDispatcher($prefix)
     {
-        $this->master = $prefix . '[' . $this->master . ']';
+        $this->dispatcher = $prefix . '[' . $this->dispatcher . ']';
     }
 }

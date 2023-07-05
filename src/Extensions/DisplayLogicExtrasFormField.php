@@ -13,27 +13,27 @@ class DisplayLogicExtrasFormField extends DisplayLogic
 
     /**
      * If the criteria evaluate true, the field should display
-     * @param  string $master The name of the master field
+     * @param  string $dispatcher The name of the dispatcher field
      * @return UncleCheese\DisplayLogic\Criteria
      */
-    public function displayIf($master)
+    public function displayIf($dispatcher): Criteria
     {
         $this->display_logic_classes = 'display-logic display-logic-hidden display-logic-display';
 
-        return parent::displayIf($master);
+        return parent::displayIf($dispatcher);
     }
 
     /**
      * If the criteria evaluate true, the field should hide.
      * The field will be hidden with CSS on page load, before the script loads.
-     * @param  string $master The name of the master field
+     * @param  string $dispatcher The name of the dispatcher field
      * @return UncleCheese\DisplayLogic\Criteria
      */
-    public function hideIf($master)
+    public function hideIf($dispatcher): Criteria
     {
         $this->display_logic_classes = 'display-logic display-logic-hide';
 
-        return parent::hideIf($master);
+        return parent::hideIf($dispatcher);
     }
 
     /**
@@ -61,7 +61,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic
      * Loads the dependencies and renders the JavaScript-readable logic to the form HTML
      * @return string
      */
-    public function DisplayLogic()
+    public function DisplayLogic(): ?string
     {
         $parentResult = parent::DisplayLogic();
 
@@ -77,7 +77,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic
      * @param Criteria $criteria
      * @return Criteria
      */
-    public function setDisplayLogicCriteria(Criteria $criteria)
+    public function setDisplayLogicCriteria(Criteria $criteria): Criteria
     {
         $this->owner->setField('displayLogic', $criteria);
         return $criteria;
@@ -87,7 +87,7 @@ class DisplayLogicExtrasFormField extends DisplayLogic
      * @param Criteria $criteria
      * @return Criteria|null
      */
-    public function getDisplayLogicCriteria()
+    public function getDisplayLogicCriteria(): ?Criteria
     {
         return $this->owner->getField('displayLogic');
     }
