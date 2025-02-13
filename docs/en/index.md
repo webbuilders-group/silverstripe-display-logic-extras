@@ -1,6 +1,9 @@
 Included Features/Additions
 =================
 ## Additional / Expanded Logic Support
+### General Fields
+- `isChanged`: Detects whether a field has changed or not
+
 ### UploadField
 Display Logic Extras adds support for controlling field visibility based on whether an UploadField has an uploaded/selected file, has uploaded/selected at least or less than a given number of files.
 

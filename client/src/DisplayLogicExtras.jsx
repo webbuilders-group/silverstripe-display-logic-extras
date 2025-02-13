@@ -48,5 +48,11 @@ import ReactDOM from 'react-dom';
                 return (this.find('.uploadfield-item:not(.uploadfield-item--error)').length <= num);
             }
         });
+
+        $('div.display-logic, div.display-logic-dispatcher').entwine({
+            evaluateChanged() {
+                return this.getFormField().hasClass('changed');
+            },
+        });
     });
 })(jQuery);

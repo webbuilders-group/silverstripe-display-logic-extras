@@ -1,5 +1,8 @@
 # Change Log
 
+## [3.1.0](https://github.com/webbuilders-group/silverstripe-display-logic-extras/tree/3.1.0) (2025-02-13)
+[Full Changelog](https://github.com/webbuilders-group/silverstripe-display-logic-extras/compare/3.0.0...3.1.0)
+
 ## [3.0.0](https://github.com/webbuilders-group/silverstripe-display-logic-extras/tree/3.0.0) (2023-07-05)
 [Full Changelog](https://github.com/webbuilders-group/silverstripe-display-logic-extras/compare/2.0.3...3.0.0)
 

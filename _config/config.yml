@@ -18,3 +18,4 @@ UncleCheese\DisplayLogic\Criteria:
     - "hasUpload"
     - "hasUploadedAtLeast"
     - "hasUploadedLessThan"
+    - "isChanged"
