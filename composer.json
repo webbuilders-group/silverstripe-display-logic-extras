@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "~5.0",
-        "unclecheese/display-logic": "~3.0"
+        "silverstripe/framework": "~5.0|~6.0",
+        "unclecheese/display-logic": "~3.0|~4.0"
     },
     "support": {
         "issues": "https://github.com/webbuilders-group/silverstripe-display-logic-extras/issues"
