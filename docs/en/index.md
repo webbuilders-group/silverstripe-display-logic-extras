@@ -12,26 +12,49 @@ Display Logic Extras adds support for controlling field visibility based on whet
 public function getCMSFields() {
     $fields = parent::getCMSFields();
 
-    $fields->addFieldsToTab('Root.Text', array(
-        UploadField::create('BackgroundImage', 'Background Image'),
-        Wrapper::create(
-            new OptionsetField(
-                'BackgroundRepeat',
-                'Background Image Repeat Style',
-                [
-                    'back-no-repeat' => 'None',
-                    'back-repeat-x' => 'Horizontally',
-                    'back-repeat-y' => 'Vertically',
-                    'back-repeat' => 'Both',
-                ),
-                'back-no-repeat'
-            )
-        )->displayIf('BackgroundImage')->hasUpload()->end(),
+    $fields->addFieldsToTab(
+        'Root.Text',
+        [
+            UploadField::create('BackgroundImage', 'Background Image'),
+            Wrapper::create(
+                new OptionsetField(
+                    'BackgroundRepeat',
+                    'Background Image Repeat Style',
+                    [
+                        'back-no-repeat' => 'None',
+                        'back-repeat-x' => 'Horizontally',
+                        'back-repeat-y' => 'Vertically',
+                        'back-repeat' => 'Both',
+                    ),
+                    'back-no-repeat'
+                )
+            )->displayIf('BackgroundImage')->hasUpload()->end(),
 
-        UploadField::create('Documents', 'Important Documents'),
-        CheckboxField::create('TileFileList', 'Tile Documents List?')->displayIf('Documents')->hasUploadedAtLeast(6)->end(),
-        CheckboxField::create('BoldList', 'Bold Documents List?')->displayIf('Documents')->hasUploadedLessThan(6)->end()
-    ));
+            UploadField::create('Documents', 'Important Documents'),
+            CheckboxField::create('TileFileList', 'Tile Documents List?')->displayIf('Documents')->hasUploadedAtLeast(6)->end(),
+            CheckboxField::create('BoldList', 'Bold Documents List?')->displayIf('Documents')->hasUploadedLessThan(6)->end(),
+        ],
+    );
+
+    return $fields;
+}
+```
+
+### LinkField
+Display Logic Extras adds support for controlling field visibility based on whether a LinkField from silverstripe/linkfield has a link or not.
+
+```php
+public function getCMSFields() {
+    $fields = parent::getCMSFields();
+
+    $fields->addFieldsToTab(
+        'Root.Text',
+        [
+            LinkField::create('MyLinkField', 'My Link Field'),
+            TextField::create('SomeTextField', 'Text Field only shown with a Link')
+                ->displayIf('MyLinkField')->hasLink()->end(),
+        ],
+    );
 
     return $fields;
 }
