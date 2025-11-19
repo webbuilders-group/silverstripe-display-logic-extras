@@ -20,4 +20,6 @@ UncleCheese\DisplayLogic\Criteria:
     - "hasUploadedLessThan"
     - "isChanged"
     - "hasLink"
+    - "hasAtLeastNumberOfLinks"
+    - "hasLessThanNumberOfLinks"
 

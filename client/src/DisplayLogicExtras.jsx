@@ -60,6 +60,8 @@ import ReactDOM from 'react-dom';
                         originalOnChange(value);
                     }
                     setTimeout(() => {
+                        form.trigger('change');
+
                         master.notify();
                     }, 0);
                 };
@@ -105,6 +107,16 @@ import ReactDOM from 'react-dom';
 
                 return (parseInt(input.val()) > 0);
             },
+        });
+
+        $('div.field.multilink.display-logic-dispatcher').entwine({
+            evaluateHasAtLeastNumberOfLinks(num) {
+                return (this.find('.link-picker__list .link-picker__button').length >= num);
+            },
+
+            evaluateHasLessThanNumberOfLinks(num) {
+                return (this.find('.link-picker__list .link-picker__button').length <= num);
+            }
         });
 
         $('div.display-logic, div.display-logic-dispatcher').entwine({
